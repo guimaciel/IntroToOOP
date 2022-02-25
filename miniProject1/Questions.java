@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Questions  {
+    private static final String acceptableChar = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+
     private String lettersWrong;
     private int tries;
     private Cities city;
@@ -27,9 +29,9 @@ public class Questions  {
         System.out.print("Guess a letter: ");
         Scanner sc = new Scanner(System.in);
         String letter = "";
-        while (!(letter.length() == 1)) {
+        while (!(letter.length() == 1) || acceptableChar.indexOf(letter)  < 0) {
             letter = sc.nextLine();
-            if (!(letter.length() == 1)) {
+            if (!(letter.length() == 1)  || acceptableChar.indexOf(letter)  < 0) {
                 System.out.print("Invalid input value. Guess a letter: ");
             }
         }
