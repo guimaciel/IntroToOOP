@@ -57,7 +57,8 @@ public class Cities {
         while (index >= 0) {
             index = nameLCase.indexOf(letter, index);
             if (index >= 0) {
-                this.guess = this.guess.substring(0, index) + this.name.substring(index,index + 1) + this.guess.substring(index + 1);
+                this.guess = this.guess.substring(0, index) + this.name.substring(index,index + 1)
+                               + this.guess.substring(index + 1);
                 index++;
                 count++;
             }

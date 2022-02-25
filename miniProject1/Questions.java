@@ -26,7 +26,13 @@ public class Questions  {
     public boolean askLetter() {
         System.out.print("Guess a letter: ");
         Scanner sc = new Scanner(System.in);
-        String letter = sc.nextLine();
+        String letter = "";
+        while (!(letter.length() == 1)) {
+            letter = sc.nextLine();
+            if (!(letter.length() == 1)) {
+                System.out.print("Invalid input value. Guess a letter: ");
+            }
+        }
         if (!city.guessLetter(letter) && this.lettersWrong.toLowerCase().indexOf(letter.toLowerCase()) == -1) {
             this.tries++;
             this.lettersWrong += letter + " ";
